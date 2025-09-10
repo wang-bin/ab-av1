@@ -226,6 +226,10 @@ impl VCodecSpecific for Arc<str> {
             e if e.ends_with("_nvenc") => "-cq",
             // https://ffmpeg.org//ffmpeg-codecs.html#QSV-Encoders
             e if e.ends_with("_qsv") => "-global_quality",
+            e if e.ends_with("_amf") => "-quality",
+            e if e.ends_with("_mf") => "-quality",
+            e if e.ends_with("_d3d12va") => "-qp",
+            e if e.ends_with("_videotoolbox") => "-global_quality",
             _ => "-crf",
         }
     }
